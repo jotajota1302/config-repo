@@ -15,13 +15,13 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: create
-  security:
-    oauth2:
-      resource:
-        tokenInfoUri: http://localhost:8090/oauth/check_token
-      client:
-        client-id: web
-        client-secret: pass 
+security:
+  oauth2:
+    resource:
+      tokenInfoUri: http://localhost:8090/oauth/check_token
+    client:
+      client-id: web
+      client-secret: pass 
 server:
   port: ${SERVER_PORT:8082}
 eureka:
