@@ -12,14 +12,19 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect 
     generate-ddl: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+   main:
+    allow-bean-definition-overriding: true      
 security:
-    oauth2:
-      resource:
-        tokenInfoUri: http://localhost:8090/oauth/check_token
-      client:
-        client-id: web
-        client-secret: pass
+  oauth2:
+    client:
+      clientId: ${AUTH_CLIENT_ID:web}
+      clientSecret: ${AUTH_CLIENT_SECRET:cGFzcw==}
+      grant-type: ${AUTH_CLIENT_CREDENTIALS:client_credentials}
+      scope: server
+      access-token-uri: ${AUTH_SERVICE_URL:http://localhost}:${AUTH_SERVICE_PORT:8769}/oauth/token
+    resource:
+      token-info-uri: ${AUTH_SERVICE_URL:http://localhost}:${AUTH_SERVICE_PORT:8769}/oauth/check_token
 server:
   port: ${SERVER_PORT:8081}
 eureka:
