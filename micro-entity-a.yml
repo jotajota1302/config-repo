@@ -19,7 +19,7 @@ security:
   oauth2:
     client:
       clientId: ${AUTH_CLIENT_ID:web}
-      clientSecret: ${AUTH_CLIENT_SECRET:cGFzcw==}
+      clientSecret: ${AUTH_CLIENT_SECRET:pass}
       grant-type: ${AUTH_CLIENT_CREDENTIALS:client_credentials}
       scope: server
       access-token-uri: ${AUTH_SERVICE_URL:http://localhost}:${AUTH_SERVICE_PORT:8090}/oauth/token
