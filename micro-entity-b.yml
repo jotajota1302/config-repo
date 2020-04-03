@@ -31,7 +31,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${DISCOVERY_HOST:localhost}:${DISCOVERY_PORT:8761}/eureka/
   instance:
-    hostname: micro-entityB
+    hostname: micro-entity-b
     prefer-ip-address: true
 feign:
   client:
